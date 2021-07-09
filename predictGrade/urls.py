@@ -14,10 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.http.response import HttpResponse
 from django.conf.urls import url
-from django.shortcuts import render
 from predictApp.views import login, select, forms
+
 
 
 urlpatterns = [
@@ -26,7 +25,6 @@ urlpatterns = [
     url(r'^forms$', forms, name='forms'),
     url(r'^select$', select, name='select'),
 ]
-
 
 
     

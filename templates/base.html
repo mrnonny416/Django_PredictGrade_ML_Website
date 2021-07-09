@@ -2,6 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <style>
+      body {
+      
+      {% load static %}background-image: url('{% static 'images/IU-LILAC.png' %}');
+      background-repeat: no-repeat;
+      background-attachment: fixed;  
+      background-size: cover;
+      }
+    </style>
     {% block content %}
       {% endblock content %}
 </html>
+
