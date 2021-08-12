@@ -1,0 +1,14 @@
+
+h1{
+    color: red;
+}
+body{
+ background-image: url("../images/IU-LILAC.png");
+ background-repeat: no-repeat;
+ background-attachment: fixed;  
+ background-size: cover;
+ }
+ .container {
+ grid-template-columns: 40px 50px auto 50px 40px;
+ grid-template-rows: 25% 100px auto;
+ }

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-f_=m(g+_d52x3f4sno5=l7bxrnjaegqnkpgtvjgo9u3fsiy*f#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.102','prediction.iamnonny.work'] # prediction.iamnonny.work
+ALLOWED_HOSTS = ['192.168.1.102','prediction.iamnonny.work','192.168.1.100','127.0.0.1'] # prediction.iamnonny.work
 
 
 
@@ -120,7 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/statics/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
