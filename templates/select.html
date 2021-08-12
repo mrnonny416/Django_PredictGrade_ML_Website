@@ -1,10 +1,48 @@
 {% extends "base.html" %}
 {% block content %}
-    <title>เลือกรายวิชา</title>
+  <title>เลือกรายวิชา</title>
   </head>
   <body>
-    <h1>กรูณาเลือกรายวิชาที่ต้องการทำนายผล</h1>
-    {% load static %} 
-    <img src="{% static "images/iu.jpg" %}" alt="IU" />
+    <div class="container">
+      <div class="header">
+        ระบบทำนายผลระดับความสารมารถในการผ่านรายวิชาชีพบังคับ
+     </div>
+
+
+      <div class="menu">
+        <h1>กรุณาเลือกรายวิชาที่ต้องการทำนายผล</h1>
+          <table border="1px" width="80%" align="center">
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+            </tr>
+             <tr>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+            </tr>
+             <tr>
+              <td colspan="5">
+                <table border="1px" width="80%" align="center">
+                  <tr>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+      </div>
+        <div class="footer">
+          ส่วนหนึงของรายวิชาโครงการ
+        </div>
+    </div>
   </body>
 {% endblock content %}

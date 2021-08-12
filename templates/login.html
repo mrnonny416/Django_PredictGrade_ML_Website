@@ -1,13 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-    <title>เลือกรายวิชา</title>
+  <title>เข้าสู่ระบบ</title>
   </head>
   <body>
-    <h1>กรูณาเลือกรายวิชาที่ต้องการทำนายผล</h1>
-     <form method="post">
-      {% csrf_token %}
-      {{ form }}
-      <input type="Submit" value="เข้าสู่ระบบ">
-    </form>
+    <div class="container">
+      <div class="header">
+        ระบบทำนายผลระดับความสารมารถในการผ่านรายวิชาชีพบังคับ
+     </div>
+     <div class="main">
+     <table width="100%">
+      <tr class="maintitle">
+          <h1>กรุณากรอกรหัสนักศึกษา</h1>
+      </tr>
+      <tr class="mainform">
+        <form method="post">
+          {% csrf_token %}
+          {{ form }}
+          <input type="Submit" value="ตรวจสอบ">
+        </form>
+      </tr>
+     </table>
+     </div>
+      <div class="footer">
+          ส่วนหนึงของรายวิชาโครงการ
+        </div>
+    </div>
   </body>
 {% endblock content %}
