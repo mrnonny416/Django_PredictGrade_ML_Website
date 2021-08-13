@@ -6,24 +6,18 @@
     <div class="container">
       <div class="header">
         ระบบทำนายผลระดับความสารมารถในการผ่านรายวิชาชีพบังคับ
-     </div>
-     <div class="main">
-     <table width="100%">
-      <tr class="maintitle">
-          <h1>กรุณากรอกรหัสนักศึกษา</h1>
-      </tr>
-      <tr class="mainform">
-        <form method="post">
-          {% csrf_token %}
-          {{ form }}
-          <input type="Submit" value="ตรวจสอบ">
-        </form>
-      </tr>
-     </table>
-     </div>
+      </div>
+      <div class="main">
+            <h1>กรุณากรอกรหัสนักศึกษา</h1>
+            <form method="post">
+              {% csrf_token %}
+              {{ form }}
+              <input type="Submit" value="ตรวจสอบ">
+            </form>
+      </div>
       <div class="footer">
           ส่วนหนึงของรายวิชาโครงการ
-        </div>
+      </div>
     </div>
   </body>
 {% endblock content %}

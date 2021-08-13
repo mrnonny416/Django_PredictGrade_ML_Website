@@ -1,0 +1,36 @@
+body {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+.container {
+    height: 700px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 70px 100% 30px;
+}
+
+.header {
+    padding-top: 0px;
+    background-color: #6BCCB4;
+    color: #414141CC;
+    font-family: sans-serif;
+    font-size: 25px;
+    padding-left: 25px;
+}
+
+.main {
+    background-color: blueviolet;
+    justify-self: center;
+    align-self: center;
+}
+
+.footer {
+    background-color: #cacaca;
+    color: #414141CC;
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: center;
+}

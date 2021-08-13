@@ -13,4 +13,6 @@ def select(request):
     return render(request, 'select.html')
 
 def forms(request):
+    if request.method == 'GET':
+        print(request.GET.get('sID'))
     return render(request, 'forms.html')
