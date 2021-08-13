@@ -1,23 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-  <title>เข้าสู่ระบบ</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        ระบบทำนายผลระดับความสารมารถในการผ่านรายวิชาชีพบังคับ
+<title>เข้าสู่ระบบ</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      ระบบทำนายผลระดับความสามารถในการผ่านรายวิชาชีพบังคับ
+    </div>
+    <div class="main">
+      <div class="img">
+        <img src="https://www.lopburicancer.in.th/img/user.png" width="200" >
       </div>
-      <div class="main">
-            <h1>กรุณากรอกรหัสนักศึกษา</h1>
-            <form method="post">
-              {% csrf_token %}
-              {{ form }}
-              <input type="Submit" value="ตรวจสอบ">
-            </form>
-      </div>
-      <div class="footer">
-          ส่วนหนึงของรายวิชาโครงการ
+      <div class="form">
+        <form method="post">
+          {% csrf_token %}
+          {{ form }}
+          <button class="button">LOGIN</button>
+        </form>
       </div>
     </div>
-  </body>
+
+    <div class="footer">
+      ระบบทำนายผลระดับความสามารถในการผ่านรายวิชาชีพบังคับ ส่วนหนึ่งของการศึกษาตามหลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมคอมพิวเตอร์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ปีการศึกษา 2564
+    </div>
+  </div>
+</body>
 {% endblock content %}

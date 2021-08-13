@@ -1,3 +1,3 @@
 from django import forms
 class loginForm(forms.Form):
-    studentID = forms.CharField(label='รหัสนักศึกษา', max_length=100)
+    studentID = forms.CharField(label='',widget=forms.TextInput(attrs={'class': 'myfieldclass','placeholder':'กรุณากรอกรหัสนักศึกษา'}))
