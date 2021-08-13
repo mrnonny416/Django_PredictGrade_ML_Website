@@ -14,5 +14,5 @@ def select(request):
 
 def forms(request):
     if request.method == 'GET':
-        print(request.GET.get('sID'))
-    return render(request, 'forms.html')
+        subjectID = request.GET.get('sID')
+    return render(request, 'forms.html' ,{'subjectID':subjectID})
