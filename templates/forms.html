@@ -3,7 +3,11 @@
     <title>หน้าฟอร์ม</title>
   </head>
   <body>
-    <h1>กรูณากรอกรายวิชาที่เกี่ยวข้อง</h1>
-    {{subjectID}}
+    <h1>กรุณากรอกรายวิชาที่เกี่ยวข้อง</h1>
+    {% for subject_info in subject_info %}
+      {{subject_info.subjectID}}
+      {{subject_info.subject_name_th}}
+      {{subject_info.subject_name_eng}}
+     {% endfor %} 
   </body>
 {% endblock content %}

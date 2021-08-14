@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from .loginforms import loginForm
+from .models import Subject
 # Create your views here.
 def login(request):
     if request.method == 'POST':
@@ -17,5 +18,6 @@ def select(request):
 
 def forms(request):
     if request.method == 'GET':
-        subjectID = request.GET.get('sID')
-    return render(request, 'forms.html' ,{'subjectID':subjectID})
+        subjectID = request.GET.get('subjectID')
+        subject_info = Subject.objects.filter(subjectID=(subjectID))
+    return render(request, 'forms.html' ,{'subject_info':subject_info})
