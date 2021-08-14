@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-f_=m(g+_d52x3f4sno5=l7bxrnjaegqnkpgtvjgo9u3fsiy*f#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.102','prediction.iamnonny.work','192.168.1.100','127.0.0.1'] # prediction.iamnonny.work
+ALLOWED_HOSTS = ['predict.thgrades.com','127.0.0.1'] # 
 
 
 
