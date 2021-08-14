@@ -38,19 +38,18 @@ body {
     font-size: 15px;
     text-align: center;
     position: fixed;
-  width: 100%;
-  bottom: 0px;
-  height: 1rem;
-  padding: 20px 0px;
-   
+    width: 100%;
+    bottom: 0px;
+    height: 1rem;
+    padding: 20px 0px;
 }
 
 .img {
-  height: 80%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
+    height: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
 }
 
 .button {
@@ -65,18 +64,22 @@ body {
     cursor: pointer;
     background-color: #4CAF50;
     border-radius: 10px;
-    box-shadow:2px 3px #D1D1D1;
-  }
+    box-shadow: 2px 3px #D1D1D1;
+}
 
-  .form{
+.form {
     height: 20%;
     padding: 0px 400px;
     margin: auto;
-  }
+}
 
-  .myfieldclass{
-      height: 30px;
-      width: 200px;
-      border-radius: 10px;
-      box-shadow:0px 3px #D1D1D1;
-  }
+.myfieldclass {
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 3px #D1D1D1;
+}
+
+.menuIcon {
+    width: 150px;
+}
