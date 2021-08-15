@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from .loginforms import loginForm
-from .models import Subject
+from .models import Subject ,Subject_refer ,Instructor
 # Create your views here.
 def login(request):
     if request.method == 'POST':
@@ -19,5 +19,8 @@ def select(request):
 def forms(request):
     if request.method == 'GET':
         subjectID = request.GET.get('subjectID')
-        subject_info = Subject.objects.filter(subjectID=(subjectID))
-    return render(request, 'forms.html' ,{'subject_info':subject_info})
+        #subject_info = Subject.objects.filter(subjectID=(subjectID))
+        subject_info = Subject.objects.all()
+        subject_refer_info = Subject_refer.objects.all()
+        Instructor_info = Instructor.objects.all()
+    return render(request, 'forms.html' ,{'subjectID':subjectID ,'subject_info':subject_info ,'subject_refer_info':subject_refer_info ,'Instructor_info':Instructor_info})

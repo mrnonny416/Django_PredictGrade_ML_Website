@@ -5,9 +5,31 @@
   <body>
     <h1>กรุณากรอกรายวิชาที่เกี่ยวข้อง</h1>
     {% for subject_info in subject_info %}
-      {{subject_info.subjectID}}
-      {{subject_info.subject_name_th}}
-      {{subject_info.subject_name_eng}}
+        {% if subject_info.subjectID == subjectID %}
+          {{subject_info.subjectID}}
+          {{subject_info.subject_name_th}}
+          {{subject_info.subject_name_eng}}
+          <br>
+        {% endif %}
      {% endfor %} 
+
+    <h1>รายวิชาที่เกี่ยวข้อง</h1>
+    {% for subject_refer_info in subject_refer_info %}  
+      {% if subject_refer_info.subjectID == subjectID %}
+        {% for subject_info in subject_info %}
+          {% if subject_info.subjectID == subject_refer_info.ref_subjectID %}
+            {{subject_info.subjectID}}
+            {{subject_info.subject_name_th}}
+            {{subject_info.subject_name_eng}}
+          {% endif %}
+        {% endfor %} 
+        {% for Instructor_info in Instructor_info %}
+          {% if subject_refer_info.subject_instructor_ID == Instructor_info.Instructor_ID %}
+            {{Instructor_info.Instructor_name}}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      <br>
+    {% endfor %} 
   </body>
 {% endblock content %}
