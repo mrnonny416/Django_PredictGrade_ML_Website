@@ -45,6 +45,16 @@ def reports(request):
                     subject_refer_index.append(subject_info_roll.subjectID)
                     break
         for subject_refer_index_roll in subject_refer_index:
-            InstructorID.append([subject_refer_index_roll,request.POST.get('instructorID_'+subject_refer_index_roll),request.POST.get('grade_'+subject_refer_index_roll)])
+            grade_roll = request.POST.get('grade_'+subject_refer_index_roll)
+            if grade_roll == '4':Grade = 'A'
+            elif grade_roll == '3.5':Grade = 'B+'
+            elif grade_roll == '3':Grade = 'B'
+            elif grade_roll == '2.5':Grade = 'C+'
+            elif grade_roll == '2':Grade = 'C'
+            elif grade_roll == '1.5':Grade = 'D+'
+            elif grade_roll == '1':Grade = 'D'
+            elif grade_roll == '0':Grade = 'F'
+            else:Grade = 'ยังไม่ได้ลงทะเบียนเรียนหรือถอนรายวิชา'
+            InstructorID.append([subject_refer_index_roll,request.POST.get('instructorID_'+subject_refer_index_roll),Grade])
 
-    return render(request, 'reports.html', {'subjectID':subjectID ,'subject_info':subject_info ,'subject_refer_info':subject_refer_info ,'Instructor_info':Instructor_info,'subject_refer_index':subject_refer_index,'InstructorID':InstructorID})
+    return render(request, 'reports.html', {'subjectID':subjectID ,'subject_info':subject_info ,'Instructor_info':Instructor_info,'subject_refer_index':subject_refer_index,'InstructorID':InstructorID})
