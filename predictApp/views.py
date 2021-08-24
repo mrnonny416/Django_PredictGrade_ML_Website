@@ -20,7 +20,6 @@ def forms(request):
     if request.method == 'GET':
         subject_refer_index = []
         subjectID = request.GET.get('subjectID')
-        #subject_info = Subject.objects.filter(subjectID=(subjectID))
         subject_info = Subject.objects.all()
         subject_refer_info = Subject_refer.objects.filter(subjectID=(subjectID))
         Instructor_info = Instructor.objects.all()
@@ -30,3 +29,22 @@ def forms(request):
                     subject_refer_index.append(subject_info_roll.subjectID)
                     break
     return render(request, 'forms.html' ,{'subjectID':subjectID ,'subject_info':subject_info ,'subject_refer_info':subject_refer_info ,'Instructor_info':Instructor_info,'subject_refer_index':subject_refer_index})
+
+def reports(request):
+    if request.method == 'POST':
+        InstructorID = []
+        Grade = []
+        subject_refer_index = []
+        subjectID = request.GET.get('subjectID')
+        subject_info = Subject.objects.all()
+        subject_refer_info = Subject_refer.objects.filter(subjectID=(subjectID))
+        Instructor_info = Instructor.objects.all()
+        for subject_info_roll in subject_info:
+            for subject_refer_info_roll in subject_refer_info:
+                if(subject_info_roll.subjectID == subject_refer_info_roll.ref_subjectID):
+                    subject_refer_index.append(subject_info_roll.subjectID)
+                    break
+        for subject_refer_index_roll in subject_refer_index:
+            InstructorID.append([subject_refer_index_roll,request.POST.get('instructorID_'+subject_refer_index_roll),request.POST.get('grade_'+subject_refer_index_roll)])
+
+    return render(request, 'reports.html', {'subjectID':subjectID ,'subject_info':subject_info ,'subject_refer_info':subject_refer_info ,'Instructor_info':Instructor_info,'subject_refer_index':subject_refer_index,'InstructorID':InstructorID})

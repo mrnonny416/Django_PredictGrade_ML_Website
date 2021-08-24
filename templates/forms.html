@@ -13,43 +13,37 @@
         {% endif %}
      {% endfor %} 
     <h1>รายวิชาที่เกี่ยวข้อง</h1>
-    <form action="" method="POST">
-    {% for subject_info_1 in subject_info %}
+    <form action="reports?subjectID={{subjectID}}" method="post">
+    {% csrf_token %}
 <!--##########################Refer_subject######################################################-->
+    {% for subject_info_1 in subject_info %}
       {% for subject_refer_index in subject_refer_index %}
         {% if subject_info_1.subjectID == subject_refer_index %}
-          {% for subject_info_2 in subject_info %}
-            {% if subject_info_2.subjectID == subject_refer_index %}
-              {{subject_info_2.subjectID}}
-              {{subject_info_2.subject_name_th}}
-              {{subject_info_2.subject_name_eng}}
-<!--##########################Instructor_info######################################################-->
-              <select id="{{subject_refer_info.ref_subjectID}}" name="{{subject_refer_info.ref_subjectID}}">
-            {% endif %}
-          {% endfor %}
+          {{subject_info_1.subjectID}}
+          {{subject_info_1.subject_name_th}}
+          {{subject_info_1.subject_name_eng}}
+          <!--##########################Instructor_info######################################################-->
+          <select id="instructorID_{{subject_info_1.subjectID}}" name="instructorID_{{subject_info_1.subjectID}}">
         {% endif %}
       {% endfor %} 
-      
+
       {% for subject_refer_info in subject_refer_info %}
         {% if subject_info_1.subjectID == subject_refer_info.ref_subjectID %}
-          {% for subject_info_2 in subject_info %}
-            {% if subject_info_2.subjectID == subject_refer_info.ref_subjectID %}
-              {% for Instructor_info_1 in Instructor_info %}
-                {% if Instructor_info_1.Instructor_ID == subject_refer_info.subject_instructor_ID %}
-                  <option value="{{Instructor_info_1.Instructor_name}}">{{Instructor_info_1.Instructor_name}}</option>
-                {% endif %}
-              {% endfor %} 
+          {% for Instructor_info_1 in Instructor_info %}
+            {% if Instructor_info_1.Instructor_ID == subject_refer_info.subject_instructor_ID %}
+              <option value="{{Instructor_info_1.Instructor_ID}}">{{Instructor_info_1.Instructor_name}}</option>
             {% endif %}
-          {% endfor %}
+          {% endfor %} 
         {% endif %}
       {% endfor %} 
       </select>
-<!--##########################Grade######################################################-->
+
      {% for subject_refer_index in subject_refer_index %}
         {% if subject_info_1.subjectID == subject_refer_index %}
           {% for subject_info_2 in subject_info %}
             {% if subject_info_2.subjectID == subject_refer_index %}
-              <select id="{{subject_refer_index}}grade" name="{{subject_refer_index}}grade">
+            <!--##########################Grade######################################################-->
+              <select id="grade_{{subject_info_2.subjectID}}" name="grade_{{subject_info_2.subjectID}}">
                 <option value="4">A</option>
                 <option value="3.5">B+</option>
                 <option value="3">B</option>
@@ -65,8 +59,9 @@
           {% endfor %}
         {% endif %}
       {% endfor %} 
-<!--################################################################################-->
     {% endfor %} 
+<!--################################################################################-->
+    <input type="submit">
     </form>
   </body>
 {% endblock content %}

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url
-from predictApp.views import login, select, forms
+from predictApp.views import login, select, forms, reports
 
 
 
@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^$', login, name='login'),
     url(r'^forms$', forms, name='forms'),
     url(r'^select$', select, name='select'),
+    url(r'^reports$', reports, name='reports'),
 ]
 
 
