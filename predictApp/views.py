@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from .loginforms import loginForm
 from .models import Subject ,Subject_refer ,Instructor
+from .predictors import predict
 # Create your views here.
 def login(request):
     if request.method == 'POST':
@@ -56,5 +57,9 @@ def reports(request):
             elif grade_roll == '0':Grade = 'F'
             else:Grade = 'ยังไม่ได้ลงทะเบียนเรียนหรือถอนรายวิชา'
             InstructorID.append([subject_refer_index_roll,request.POST.get('instructorID_'+subject_refer_index_roll),Grade])
+        NUM = prediction(request.POST.get('grade_ENGCE111'),request.POST.get('grade_ENGCE112'))
+    return render(request, 'reports.html', {'subjectID':subjectID ,'subject_info':subject_info ,'Instructor_info':Instructor_info,'subject_refer_index':subject_refer_index,'InstructorID':InstructorID,'NUM':NUM})
 
-    return render(request, 'reports.html', {'subjectID':subjectID ,'subject_info':subject_info ,'Instructor_info':Instructor_info,'subject_refer_index':subject_refer_index,'InstructorID':InstructorID})
+def prediction(x,y):
+    Ans = predict(x,y)
+    return Ans
