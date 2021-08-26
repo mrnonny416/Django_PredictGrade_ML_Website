@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from .loginforms import loginForm
 from .models import Subject ,Subject_refer ,Instructor
-from .predictors import predict
+from .predictors import predict_ENGCE101
 # Create your views here.
 def login(request):
     if request.method == 'POST':
@@ -33,6 +33,7 @@ def forms(request):
 
 def reports(request):
     if request.method == 'POST':
+        Instructor_number = []
         InstructorID = []
         Grade = []
         subject_refer_index = []
@@ -57,9 +58,14 @@ def reports(request):
             elif grade_roll == '0':Grade = 'F'
             else:Grade = 'ยังไม่ได้ลงทะเบียนเรียนหรือถอนรายวิชา'
             InstructorID.append([subject_refer_index_roll,request.POST.get('instructorID_'+subject_refer_index_roll),Grade])
-        NUM = prediction(request.POST.get('grade_ENGCE111'),request.POST.get('grade_ENGCE112'))
-    return render(request, 'reports.html', {'subjectID':subjectID ,'subject_info':subject_info ,'Instructor_info':Instructor_info,'subject_refer_index':subject_refer_index,'InstructorID':InstructorID,'NUM':NUM})
 
-def prediction(x,y):
-    Ans = predict(x,y)
+        for i in InstructorID:
+            Instructor_number.append(int((i[1])[3:5]))
+        if subjectID == 'ENGCE101':
+            Predict_result = prediction(int(request.POST.get('grade_ENGCC304')),Instructor_number[0],int(request.POST.get('grade_FUNMA105')),Instructor_number[1],int(request.POST.get('grade_FUNSC101')),Instructor_number[2],int(request.POST.get('grade_GEBLC103')),Instructor_number[3])
+    return render(request, 'reports.html', {'subjectID':subjectID ,'subject_info':subject_info ,'Instructor_info':Instructor_info,'subject_refer_index':subject_refer_index,'InstructorID':InstructorID,'Predict_result':Predict_result})
+
+
+def prediction(ENGCC304,ENGCC304_Instructor,FUNMA105,FUNMA105_Instructor,FUNSC101,FUNSC101_Instructor,GEBLC103,GEBLC103_Instructor):
+    Ans = predict_ENGCE101(ENGCC304,ENGCC304_Instructor,FUNMA105,FUNMA105_Instructor,FUNSC101,FUNSC101_Instructor,GEBLC103,GEBLC103_Instructor)
     return Ans
