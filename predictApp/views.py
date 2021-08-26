@@ -62,10 +62,10 @@ def reports(request):
         for i in InstructorID:
             Instructor_number.append(int((i[1])[3:5]))
         if subjectID == 'ENGCE101':
-            Predict_result = prediction(int(request.POST.get('grade_ENGCC304')),Instructor_number[0],int(request.POST.get('grade_FUNMA105')),Instructor_number[1],int(request.POST.get('grade_FUNSC101')),Instructor_number[2],int(request.POST.get('grade_GEBLC103')),Instructor_number[3])
+            Predict_result = prediction(float(request.POST.get('grade_ENGCC304')),Instructor_number[2],float(request.POST.get('grade_FUNMA105')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
     return render(request, 'reports.html', {'subjectID':subjectID ,'subject_info':subject_info ,'Instructor_info':Instructor_info,'subject_refer_index':subject_refer_index,'InstructorID':InstructorID,'Predict_result':Predict_result})
 
 
-def prediction(ENGCC304,ENGCC304_Instructor,FUNMA105,FUNMA105_Instructor,FUNSC101,FUNSC101_Instructor,GEBLC103,GEBLC103_Instructor):
-    Ans = predict_ENGCE101(ENGCC304,ENGCC304_Instructor,FUNMA105,FUNMA105_Instructor,FUNSC101,FUNSC101_Instructor,GEBLC103,GEBLC103_Instructor)
-    return Ans
+def prediction(ENGCC304,ENGCC304_Instructor,FUNMA105,FUNSC101,GEBLC103):
+    Predict_result = predict_ENGCE101(ENGCC304,ENGCC304_Instructor,FUNMA105,FUNSC101,GEBLC103)
+    return Predict_result

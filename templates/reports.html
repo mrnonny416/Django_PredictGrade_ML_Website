@@ -12,7 +12,14 @@
           <br>
         {% endif %}
      {% endfor %} 
-    <h1>รายวิชาที่เกี่ยวข้อง</h1>
+    <h1>ผลการทำนาย</h1>
+    {% if Predict_result > 70 %}
+      <h1>มีโอกาสผ่านมาก</h1>
+    {% elif Predict_result > 50 %}
+      <h1>มีโอกาสผ่านน้อย</h1>
+    {% else %}
+      <h1>มีโอกาศไม่ผ่าน</h1>
+    {% endif %}
 
     {% for subject_info_1 in subject_info %}
       {% for subject_refer_index in subject_refer_index %}
@@ -33,7 +40,7 @@
           <br>
         {% endif %}
       {% endfor %} 
-    {% endfor %} 
-  {{Predict_result}}
+    {% endfor %}
+
   </body>
 {% endblock content %}
