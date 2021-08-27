@@ -1,9 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
     <title>หน้าฟอร์ม</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
   <body>
-    <h1>กรุณากรอกรายวิชาที่เกี่ยวข้อง</h1>
+    <div class="container">
+    <div class="w3-container w3-blue">
+      <div class="header">
+        เลือกวิชาที่เกี่ยวข้องเพื่อทำนายผล
+      </div>
+    </div>
+    <div class="mainform">
+     <h1> กรุณากรอกรายวิชาที่เกี่ยวข้อง</h1>
     {% for subject_info in subject_info %}
         {% if subject_info.subjectID == subjectID %}
           {{subject_info.subjectID}}
@@ -63,5 +71,11 @@
 <!--################################################################################-->
     <input type="submit">
     </form>
+  </div>
+  <div class="footer">
+    ระบบทำนายผลระดับความสามารถในการผ่านรายวิชาชีพบังคับ ส่วนหนึ่งของการศึกษาตามหลักสูตรวิศวกรรมศาสตรบัณฑิต
+    สาขาวิชาวิศวกรรมคอมพิวเตอร์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ปีการศึกษา 2564
+  </div>
+</div>
   </body>
 {% endblock content %}

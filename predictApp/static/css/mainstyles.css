@@ -13,19 +13,17 @@ body {
 }
 
 .header {
-    background-color: #1879E2;
     color: white;
     font-family: sans-serif;
     font-size: 20px;
-    width: 98.95%;
-    padding: 30px 0px;
+    padding: 20px 0px;
     height: 2rem;
     padding-left: 20px;
 }
 
 .main {
-    height: 20rem;
-    width: 60%;
+    height: 80%;
+    width: 100%;
     justify-self: center;
     align-self: center;
     margin: auto auto auto auto;
@@ -39,17 +37,23 @@ body {
     text-align: center;
     position: fixed;
     width: 100%;
-    bottom: 0px;
-    height: 1rem;
+    bottom: 0rem;
+    height: 4rem;
     padding: 20px 0px;
 }
 
 .img {
-    height: 80%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
+    margin: auto;
+    width: 50%;
+    height: 60%;
+}
+
+.in-img{
+  display: block;
+  padding-top: 4rem;
+  margin: auto;
+  width: 250px;
+  height: 100%;
 }
 
 .button {
@@ -68,10 +72,18 @@ body {
 }
 
 .form {
-    height: 20%;
-    padding: 0px 400px;
     margin: auto;
+    width: 50%;
+    height: 40%;
 }
+
+.in-form{
+    display: block;
+    padding-top: 1rem;
+    margin: auto;
+    width: 320px;
+    height: 100%;
+  }
 
 .myfieldclass {
     height: 30px;
@@ -83,3 +95,64 @@ body {
 .menuIcon {
     width: 150px;
 }
+
+
+.mainselect {
+    height: 100%;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    margin: auto;
+    padding-top: 5rem;
+}
+
+
+.containerimg {
+    position: relative;
+    width: 100%;
+  }
+  
+  .imagehover {
+    display: block;
+    width: 180;
+    height: auto;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 9px;
+    bottom: 0;
+    left: 9px;
+    right: 0;
+    height: 163px;
+    width: 163px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+    border-radius: 1.2rem;
+  }
+  
+  .containerimg:hover .overlay {
+    opacity: 0.5;
+  }
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .mainform{
+    height: 100%;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    margin: auto;
+
+  }

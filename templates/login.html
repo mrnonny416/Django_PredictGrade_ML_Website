@@ -2,27 +2,36 @@
 {% block content %}
 <title>เข้าสู่ระบบ</title>
 </head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <body>
   <div class="container">
-    <div class="header">
-      ระบบทำนายผลระดับความสามารถในการผ่านรายวิชาชีพบังคับ
+    <div class="w3-container w3-blue">
+      <div class="header">
+        ระบบทำนายผลระดับความสามารถในการผ่านรายวิชาชีพบังคับ
+      </div>
     </div>
     <div class="main">
       <div class="img">
-        <img src="https://www.lopburicancer.in.th/img/user.png" width="200" >
+        <div class="in-img">
+          <img src="https://www.lopburicancer.in.th/img/user.png" style="width:100%;bottom: 0rem;">
+        </div>
+
       </div>
       <div class="form">
-        <form method="post">
-          {% csrf_token %}
-          {{ form }}
-          <button class="button">LOGIN</button>
-        </form>
+        <div class="in-form">
+          <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button class="button">LOGIN</button>
+          </form>
+        </div>
       </div>
     </div>
 
     <div class="footer">
-      ระบบทำนายผลระดับความสามารถในการผ่านรายวิชาชีพบังคับ ส่วนหนึ่งของการศึกษาตามหลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมคอมพิวเตอร์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ปีการศึกษา 2564
+      ระบบทำนายผลระดับความสามารถในการผ่านรายวิชาชีพบังคับ ส่วนหนึ่งของการศึกษาตามหลักสูตรวิศวกรรมศาสตรบัณฑิต
+      สาขาวิชาวิศวกรรมคอมพิวเตอร์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ปีการศึกษา 2564
     </div>
   </div>
 </body>
