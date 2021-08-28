@@ -30,27 +30,15 @@
           {{subject_info_1.subjectID}}
           {{subject_info_1.subject_name_th}}
           {{subject_info_1.subject_name_eng}}
-          <!--##########################Instructor_info######################################################-->
-          <select id="instructorID_{{subject_info_1.subjectID}}" name="instructorID_{{subject_info_1.subjectID}}">
         {% endif %}
       {% endfor %} 
-
-      {% for subject_refer_info in subject_refer_info %}
-        {% if subject_info_1.subjectID == subject_refer_info.ref_subjectID %}
-          {% for Instructor_info_1 in Instructor_info %}
-            {% if Instructor_info_1.Instructor_ID == subject_refer_info.subject_instructor_ID %}
-              <option value="{{Instructor_info_1.Instructor_ID}}">{{Instructor_info_1.Instructor_name}}</option>
-            {% endif %}
-          {% endfor %} 
-        {% endif %}
-      {% endfor %} 
-      </select>
 
      {% for subject_refer_index in subject_refer_index %}
         {% if subject_info_1.subjectID == subject_refer_index %}
           {% for subject_info_2 in subject_info %}
             {% if subject_info_2.subjectID == subject_refer_index %}
             <!--##########################Grade######################################################-->
+            :ผลการเรียน
               <select id="grade_{{subject_info_2.subjectID}}" name="grade_{{subject_info_2.subjectID}}">
                 <option value="4">A</option>
                 <option value="3.5">B+</option>

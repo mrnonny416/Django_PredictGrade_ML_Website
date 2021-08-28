@@ -27,14 +27,9 @@
           {{subject_info_1.subjectID}}
           {{subject_info_1.subject_name_th}}
           {{subject_info_1.subject_name_eng}}
-          {% for InstructorID in InstructorID %}
-            {% if InstructorID.0 == subject_info_1.subjectID %}
-              {%  for Instructor_info in Instructor_info %}
-                {% if Instructor_info.Instructor_ID == InstructorID.1 %}
-                  <br>อาจารย์ผู้สอนรายวิชาที่คุณเลือก :{{Instructor_info.Instructor_name}}
-                  <br>ผลการเรียนที่คุณกรอก : {{InstructorID.2}}
-                {% endif %}
-              {% endfor %}
+          {% for GradeRoll_index in GradeRoll %}
+            {% if GradeRoll_index.0 == subject_info_1.subjectID %}
+                  <br>ผลการเรียนที่คุณกรอก : {{GradeRoll_index.1}}
             {% endif %}
           {% endfor %}
           <br>
