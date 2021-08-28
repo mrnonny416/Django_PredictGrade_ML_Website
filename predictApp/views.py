@@ -83,7 +83,7 @@ def reports(request):
         elif subjectID == 'ENGCE112':
             Predict_result = prediction_ENGCE112(float(request.POST.get('grade_ENGCC304')),float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_GEBLC103')))
         elif subjectID == 'ENGEL105':
-            Predict_result = prediction_ENGEL105(float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGCE110')),float(request.POST.get('grade_ENGEL106')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
+            Predict_result = prediction_ENGEL105(float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEL106')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
         elif subjectID == 'ENGEL106':
             Predict_result = prediction_ENGEL106(float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEE106')),float(request.POST.get('grade_FUNMA105')),float(request.POST.get('grade_FUNSC101')))
 
@@ -139,8 +139,8 @@ def prediction_ENGCE112(ENGCC304,ENGCE102,GEBLC103):
     Predict_result = predict_ENGCE112(ENGCC304,ENGCE102,GEBLC103)
     return Predict_result
 
-def prediction_ENGEL105(ENGCE106,ENGCE110,ENGEL106,FUNSC101,GEBLC103):
-    Predict_result = predict_ENGEL105(ENGCE106,ENGCE110,ENGEL106,FUNSC101,GEBLC103)
+def prediction_ENGEL105(ENGCE106,ENGEL106,FUNSC101,GEBLC103):
+    Predict_result = predict_ENGEL105(ENGCE106,ENGEL106,FUNSC101,GEBLC103)
     return Predict_result
 
 def prediction_ENGEL106(ENGCE102,ENGCE106,ENGEE106,FUNMA105,FUNSC101):

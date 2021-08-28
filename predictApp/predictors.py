@@ -94,11 +94,11 @@ def predict_ENGCE112(ENGCC304,ENGCE102,GEBLC103):
     file.close()
     return Predict_result[0][1]*100
 
-def predict_ENGEL105(ENGCE106,ENGCE110,ENGEL106,FUNSC101,GEBLC103):
+def predict_ENGEL105(ENGCE106,ENGEL106,FUNSC101,GEBLC103):
     import pickle
     file = open('predictApp\predictModel_ENGEL105.p','rb')
     predictor = pickle.load(file)
-    Predict_result = predictor.predict_proba([[ENGCE106,ENGCE110,ENGEL106,FUNSC101,GEBLC103]])
+    Predict_result = predictor.predict_proba([[ENGCE106,ENGEL106,FUNSC101,GEBLC103]])
     file.close()
     return Predict_result[0][1]*100
 
