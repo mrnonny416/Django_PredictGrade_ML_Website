@@ -24,3 +24,22 @@ class Instructor(models.Model):
    
     def __str__(self):
         return self.Instructor_ID
+
+class menu_subject(models.Model):
+    order = models.AutoField(primary_key=True)
+    menu_id = models.IntegerField(max_length=4)
+    subjectID = models.CharField(max_length=20)
+    img_menu = models.CharField(max_length=124)
+    
+    def __str__(self):
+        return self.subjectID
+
+class department(models.Model):
+    order = models.AutoField(primary_key=True)
+    department_id = models.CharField(max_length=20)
+    department_name = models.CharField(max_length=124)
+    start_CharField = models.IntegerField(max_length=4)
+    end_CharField = models.IntegerField(max_length=4)
+    
+    def __str__(self):
+        return self.department_name

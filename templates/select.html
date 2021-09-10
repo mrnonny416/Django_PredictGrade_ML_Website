@@ -8,166 +8,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <body>
     <div class="container">
-        <div class="w3-container w3-blue">
-          <div class="header">
+      <div class="w3-container w3-blue">
+        <div class="header">
             กรุณาเลือกรายวิชาที่ต้องการทำนายผล
           </div>
         </div>
-        <div class="mainselect">
-          <table  align="center">
-            <tr height="200">
-              <td width="190">
-                <a href="{% url 'forms' %}?subjectID=ENGCE101">
-                <div class="containerimg">
-                  <img src="{% static "images/ENGCE101.png" %}"  alt="ENGCE101" width="180" />
-                  <div class="overlay">
-                    <div class="text"></div>
-                  </div>
-                </div>
-              </a>
-            </td>
-              <td width="190">
-                <a href="{% url 'forms' %}?subjectID=ENGCE102">
-                  <div class="containerimg">
-                  <img src="{% static "images/ENGCE102.png" %}" alt="ENGCE102" width="180"/>
-                  <div class="overlay">
-                    <div class="text"></div>
-                  </div>
-                </div>
-                </a>
-              </td>
-              <td width="190">
-                <a href="{% url 'forms' %}?subjectID=ENGCE103">
-                  <div class="containerimg">
-                  <img src="{% static "images/ENGCE103.png" %}" alt="ENGCE103" width="180"/>
-                  <div class="overlay">
-                    <div class="text"></div>
-                  </div>
-                </div>
-                </a>
-              </td>
-              <td width="190">
-                <a href="{% url 'forms' %}?subjectID=ENGCE104">
-                  <div class="containerimg">
-                <img src="{% static "images/ENGCE104.png" %}" alt="ENGCE104" width="180"/>
-                <div class="overlay">
-                  <div class="text"></div>
-                </div>
-              </div>
-              </a>
-            </td>
-              <td width="190">
-                <a href="{% url 'forms' %}?subjectID=ENGCE105">
-                  <div class="containerimg">
-                  <img src="{% static "images/ENGCE105.png" %}" alt="ENGCE105" width="180"/>
-                  <div class="overlay">
-                    <div class="text"></div>
-                  </div>
-                </div>
-                </a>
-              </td>
-            </tr>
-             <tr>
-              <td width="190" >
-                <a href="{% url 'forms' %}?subjectID=ENGCE106">
-                  <div class="containerimg">
-                  <img src="{% static "images/ENGCE106.png" %}" alt="ENGCE106" width="180"/>
-                  <div class="overlay">
-                    <div class="text"></div>
-                  </div>
-                </div>
-                </a>
-              </td>
-              <td width="190" >
-                <a href="{% url 'forms' %}?subjectID=ENGCE107">
-                  <div class="containerimg">
-                  <img src="{% static "images/ENGCE107.png" %}" alt="ENGCE107" width="180"/>
-                  <div class="overlay">
-                    <div class="text"></div>
-                  </div>
-                </div>
-                </a>
-              </td>
-              <td width="190">
-                <a href="{% url 'forms' %}?subjectID=ENGCE108">
-                  <div class="containerimg">
-                  <img src="{% static "images/ENGCE108.png" %}" alt="ENGCE108" width="180"/>
-                  <div class="overlay">
-                    <div class="text"></div>
-                  </div>
-                </div>
-                </a>
-              </td>
-              <td width="190">
-                <a href="{% url 'forms' %}?subjectID=ENGCE109">
-                  <div class="containerimg">
-                  <img src="{% static "images/ENGCE109.png" %}" alt="ENGCE109" width="180"/>
-                  <div class="overlay">
-                    <div class="text"></div>
-                  </div>
-                </div>
-                </a>
-              </td>
-              <td width="190">
-                <a href="{% url 'forms' %}?subjectID=ENGCE110">
-                  <div class="containerimg">
-                  <img src="{% static "images/ENGCE110.png" %}" alt="ENGCE1110" width="180"/>
-                  <div class="overlay">
-                    <div class="text"></div>
-                  </div>
-                </div>
-                </a>
-              </td>
-            </tr>
-             <tr>
-              <td colspan="5">
-                <table align="center">
-                  <tr>
-                    <td width="190">
-                      <a href="{% url 'forms' %}?subjectID=ENGCE111">
-                        <div class="containerimg">
-                        <img src="{% static "images/ENGCE111.png" %}" alt="ENGCE111" width="180"/>
-                        <div class="overlay">
-                          <div class="text"></div>
-                        </div>
+      <div class="mainselect">
+        <table  align="center">
+          <tr height="200">
+          {% for menu in subject_menu %}
+            {% for subject_info in subject_info %}
+              {% if menu.subjectID == subject_info.subjectID %}
+                <td width="190">
+                  <a href="{% url 'forms' %}?subjectID={{menu.subjectID}}">
+                    <div class="containerimg">
+                      <img src="{% static "" %}{{menu.img_menu}}"  alt="{{menu.subjectID}}" width="180" />
+                      <div class="overlay">
+                        <div class="text"></div>
                       </div>
-                      </a>
-                    </td>
-                    <td width="190">
-                      <a href="{% url 'forms' %}?subjectID=ENGCE112">
-                        <div class="containerimg">
-                        <img src="{% static "images/ENGCE112.png" %}" alt="ENGCE112" width="180"/>
-                        <div class="overlay">
-                          <div class="text"></div>
-                        </div>
-                      </div>
-                      </a>
-                    </td>
-                    <td width="190">
-                      <a href="{% url 'forms' %}?subjectID=ENGEL105">
-                        <div class="containerimg">
-                        <img src="{% static "images/ENGEL105.png" %}" alt="ENGEL105" width="180"/>
-                        <div class="overlay">
-                          <div class="text"></div>
-                        </div>
-                      </div>
-                      </a>
-                    </td>
-                    <td width="190">
-                      <a href="{% url 'forms' %}?subjectID=ENGEL106">
-                        <div class="containerimg">
-                        <img src="{% static "images/ENGEL106.png" %}" alt="ENGEL106" width="180"/>
-                        <div class="overlay">
-                          <div class="text"></div>
-                        </div>
-                      </div>
-                      </a>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
+                    </div>
+                  </a>
+                </td>
+              {% endif %}
+            {% endfor %}
+            {% if menu.menu_id|divisibleby:5 %}</tr><tr height="200">{% endif %}
+          {% endfor %}
+          </tr>
+        </table>
       </div>
         <div class="footer">
           ส่วนหนึงของรายวิชาโครงการ

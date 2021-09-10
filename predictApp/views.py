@@ -1,22 +1,25 @@
 from django.shortcuts import redirect, render
 from .loginforms import loginForm
-from .models import Subject ,Subject_refer ,Instructor
+from .models import Subject ,Subject_refer ,Instructor,menu_subject,department
 from .predictors import predict_ENGCE101,predict_ENGCE102,predict_ENGCE103,predict_ENGCE104,predict_ENGCE105,predict_ENGCE106,predict_ENGCE107,predict_ENGCE108,predict_ENGCE109,predict_ENGCE110,predict_ENGCE111,predict_ENGCE112,predict_ENGEL105,predict_ENGEL106
 
 # Create your views here.
 def login(request):
     if request.method == 'POST':
-        department = (request.POST.get('studentID'))[2:8]
-        if department == '523206':
-            request.session['studentID'] = request.POST.get('studentID')
-            return redirect('select')
+        for department_check in department.objects.all():
+            departmentID = (request.POST.get('studentID'))[department_check.start_CharField:department_check.end_CharField]
+            if departmentID == department_check.department_id :
+                request.session['studentID'] = request.POST.get('studentID')
+                return redirect('select')
     return render(request, 'login.html', {'form': loginForm})
 
 def select(request):
     studentID = request.session.get('studentID')
     if(studentID == None):
         return redirect('login')
-    return render(request, 'select.html')
+    subject_menu = menu_subject.objects.all()
+    subject_info = Subject.objects.all()
+    return render(request, 'select.html',{'subject_menu':subject_menu,'subject_info':subject_info})
 
 def forms(request):
     if request.method == 'GET':

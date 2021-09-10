@@ -5,3 +5,5 @@ from . import models
 admin.site.register(models.Subject)
 admin.site.register(models.Subject_refer)
 admin.site.register(models.Instructor)
+admin.site.register(models.menu_subject)
+admin.site.register(models.department)
