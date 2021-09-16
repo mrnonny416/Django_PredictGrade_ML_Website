@@ -7,29 +7,41 @@
     <div class="container">
     <div class="w3-container w3-blue">
       <div class="header">
-        เลือกวิชาที่เกี่ยวข้องเพื่อทำนายผล
+        ระบบทำนายผลความสามารถในการผ่านรายวิชาบังคับ
       </div>
     </div>
     <div class="mainform">
-     <h1> กรุณากรอกรายวิชาที่เกี่ยวข้อง</h1>
+    <div class="inform"> 
+    <div class="formheadtext1">
+     <h1> รายวิชาที่ทำนาย</h1>
+     </div>
     {% for subject_info in subject_info %}
         {% if subject_info.subjectID == subjectID %}
+        <div class="formcontenttext1">
           {{subject_info.subjectID}}
           {{subject_info.subject_name_th}}
           {{subject_info.subject_name_eng}}
           <br>
+          </div>
         {% endif %}
      {% endfor %} 
-    <h1>รายวิชาที่เกี่ยวข้อง</h1>
+     <div class="aboutsubject">
+     <div class="formheadtext2">
+       <h2>รายวิชาที่เกี่ยวข้อง</h2>
+    </div>
     <form action="reports?subjectID={{subjectID}}" method="post">
     {% csrf_token %}
 <!--##########################Refer_subject######################################################-->
+    
     {% for subject_info_1 in subject_info %}
       {% for subject_refer_index in subject_refer_index %}
         {% if subject_info_1.subjectID == subject_refer_index %}
+        <div class="crop">
+        <div class="subjectcode">
           {{subject_info_1.subjectID}}
           {{subject_info_1.subject_name_th}}
           {{subject_info_1.subject_name_eng}}
+        </div>
         {% endif %}
       {% endfor %} 
 
@@ -38,7 +50,8 @@
           {% for subject_info_2 in subject_info %}
             {% if subject_info_2.subjectID == subject_refer_index %}
             <!--##########################Grade######################################################-->
-            :ผลการเรียน
+            <div class="grade">
+            ผลการเรียน
               <select id="grade_{{subject_info_2.subjectID}}" name="grade_{{subject_info_2.subjectID}}">
                 <option value="4">A</option>
                 <option value="3.5">B+</option>
@@ -50,15 +63,25 @@
                 <option value="0">F</option>
                 <option value="0">No Entry</option>
               </select>
+              </div>
               <br>
+               </div>
             {% endif %}
           {% endfor %}
+         
         {% endif %}
+        
       {% endfor %} 
+      
     {% endfor %} 
+    
 <!--################################################################################-->
-    <input type="submit">
+    <div class="buttonalign">
+    <button class="button">ยืนยัน</button>
+    </div>
     </form>
+    </div>
+    </div>
   </div>
   <div class="footer">
     ระบบทำนายผลระดับความสามารถในการผ่านรายวิชาชีพบังคับ ส่วนหนึ่งของการศึกษาตามหลักสูตรวิศวกรรมศาสตรบัณฑิต

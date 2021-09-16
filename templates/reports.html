@@ -1,41 +1,87 @@
 {% extends "base.html" %}
 {% block content %}
     <title>หน้าฟอร์ม</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
   <body>
-    <h1>กรุณากรอกรายวิชาที่เกี่ยวข้อง</h1>
+  <div class="container">
+   <div class="w3-container w3-blue">
+      <div class="header">
+        ระบบทำนายผลความสามารถในการผ่านรายวิชาบังคับ
+      </div>
+    </div>
+    <div class="mainform">
+    <div class="inform"> 
+     <div class="reportheadtext1">
+     <div class="text1">
+   <h2>ผลการทำนาย : </h2>
+   </div>
+    {% if Predict_result > 70 %}
+    <div class="result">
+      <h2> มีโอกาสผ่านมาก</h2>
+      </div>
+    {% elif Predict_result > 50 %}
+    <div class="result">
+      <h2> มีโอกาสผ่านน้อย</h2>
+      </div>
+    {% else %}
+    <div class="result">
+      <h2> มีโอกาศไม่ผ่าน</h2>
+      </div>
+    {% endif %}
+    </div>
+    
     {% for subject_info in subject_info %}
         {% if subject_info.subjectID == subjectID %}
+        <div class="aboutsubject"> 
+        <div class="reportheadtext2">
+        <h2>รายวิชาที่ทำนาย </h2>
+        </div>
+        <div class="reportcontenttext1">
           {{subject_info.subjectID}}
           {{subject_info.subject_name_th}}
           {{subject_info.subject_name_eng}}
           <br>
+          </div>
         {% endif %}
      {% endfor %} 
-    <h1>ผลการทำนาย</h1>
-    {% if Predict_result > 70 %}
-      <h1>มีโอกาสผ่านมาก</h1>
-    {% elif Predict_result > 50 %}
-      <h1>มีโอกาสผ่านน้อย</h1>
-    {% else %}
-      <h1>มีโอกาศไม่ผ่าน</h1>
-    {% endif %}
+    
 
     {% for subject_info_1 in subject_info %}
       {% for subject_refer_index in subject_refer_index %}
         {% if subject_info_1.subjectID == subject_refer_index %}
+         <div class="crop">
+        <div class="reportsubject">
           {{subject_info_1.subjectID}}
           {{subject_info_1.subject_name_th}}
           {{subject_info_1.subject_name_eng}}
+          </div>
           {% for GradeRoll_index in GradeRoll %}
             {% if GradeRoll_index.0 == subject_info_1.subjectID %}
-                  <br>ผลการเรียนที่คุณกรอก : {{GradeRoll_index.1}}
+            <div class="reportgrade">
+                  {{GradeRoll_index.1}}
+                  </div>
             {% endif %}
           {% endfor %}
           <br>
+          </div>
+         
         {% endif %}
       {% endfor %} 
-    {% endfor %}
-
+    {% endfor %} 
+    <div class="buttonrow">
+    <div class="inbuttonrow">
+      <button class="button">กรอกแบบการเรียนอีกครั้ง</button>
+      <button class="buttonred">กลับสู่หน้าหลัก</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+<div class="footer">
+    ระบบทำนายผลระดับความสามารถในการผ่านรายวิชาชีพบังคับ ส่วนหนึ่งของการศึกษาตามหลักสูตรวิศวกรรมศาสตรบัณฑิต
+    สาขาวิชาวิศวกรรมคอมพิวเตอร์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ปีการศึกษา 2564
+  </div>
   </body>
 {% endblock content %}
