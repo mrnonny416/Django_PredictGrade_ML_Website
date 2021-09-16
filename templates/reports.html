@@ -18,15 +18,15 @@
    </div>
     {% if Predict_result > 70 %}
     <div class="result">
-      <h2> มีโอกาสผ่านมาก</h2>
+      <h2>  <font color="Green">มีโอกาสผ่านมาก</font></h2>
       </div>
     {% elif Predict_result > 50 %}
     <div class="result">
-      <h2> มีโอกาสผ่านน้อย</h2>
+      <h2>  <font color="orange">มีโอกาสผ่านน้อย</font></h2>
       </div>
     {% else %}
     <div class="result">
-      <h2> มีโอกาศไม่ผ่าน</h2>
+      <h2> <font color="red">มีโอกาศไม่ผ่าน</font></h2>
       </div>
     {% endif %}
     </div>
@@ -38,15 +38,15 @@
         <h2>รายวิชาที่ทำนาย </h2>
         </div>
         <div class="reportcontenttext1">
-          {{subject_info.subjectID}}
+          <h3>{{subject_info.subjectID}}
           {{subject_info.subject_name_th}}
-          {{subject_info.subject_name_eng}}
+          {{subject_info.subject_name_eng}}</h3>
           <br>
           </div>
         {% endif %}
      {% endfor %} 
     
-
+<br><br>
     {% for subject_info_1 in subject_info %}
       {% for subject_refer_index in subject_refer_index %}
         {% if subject_info_1.subjectID == subject_refer_index %}
@@ -71,8 +71,8 @@
     {% endfor %} 
     <div class="buttonrow">
     <div class="inbuttonrow">
-      <button class="button">กรอกแบบการเรียนอีกครั้ง</button>
-      <button class="buttonred">กลับสู่หน้าหลัก</button>
+      <a href="{% url 'forms' %}?subjectID={{subjectID}}"><button class="button">กรอกแบบการเรียนอีกครั้ง</button></a>
+      <a href="{% url 'select' %}"><button class="buttonred">กลับสู่หน้าหลัก</button></a>
     </div>
     </div>
     </div>

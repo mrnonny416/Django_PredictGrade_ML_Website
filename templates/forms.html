@@ -18,21 +18,21 @@
     {% for subject_info in subject_info %}
         {% if subject_info.subjectID == subjectID %}
         <div class="formcontenttext1">
-          {{subject_info.subjectID}}
+          <h3>{{subject_info.subjectID}}
           {{subject_info.subject_name_th}}
-          {{subject_info.subject_name_eng}}
+          {{subject_info.subject_name_eng}}</h3>
           <br>
           </div>
         {% endif %}
      {% endfor %} 
      <div class="aboutsubject">
      <div class="formheadtext2">
-       <h2>รายวิชาที่เกี่ยวข้อง</h2>
+       <br><br><h3>รายวิชาที่เกี่ยวข้อง</h3>
     </div>
     <form action="reports?subjectID={{subjectID}}" method="post">
     {% csrf_token %}
 <!--##########################Refer_subject######################################################-->
-    
+    <br>
     {% for subject_info_1 in subject_info %}
       {% for subject_refer_index in subject_refer_index %}
         {% if subject_info_1.subjectID == subject_refer_index %}

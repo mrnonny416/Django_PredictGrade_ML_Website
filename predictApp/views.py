@@ -63,34 +63,34 @@ def reports(request):
             GradeRoll.append([subject_refer_index_roll,Grade])
 
     
-#        if subjectID == 'ENGCE101':
-#            Predict_result = prediction_ENGCE101(float(request.POST.get('grade_ENGCC304')),float(request.POST.get('grade_FUNMA105')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
-#        elif subjectID == 'ENGCE102':
-#            Predict_result = prediction_ENGCE102(float(request.POST.get('grade_ENGCC304')),float(request.POST.get('grade_FUNMA105')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
-#        elif subjectID == 'ENGCE103':
-#            Predict_result = prediction_ENGCE103(float(request.POST.get('grade_ENGCC304')),float(request.POST.get('grade_ENGEE106')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
-#        elif subjectID == 'ENGCE104':
-#            Predict_result = prediction_ENGCE104(float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEE106')),float(request.POST.get('grade_FUNSC101')))
-#        elif subjectID == 'ENGCE105':
-#            Predict_result = prediction_ENGCE105(float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_ENGCE103')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEL106')),float(request.POST.get('grade_FUNMA105')),float(request.POST.get('grade_FUNSC101')))
-#        elif subjectID == 'ENGCE106':
-#            Predict_result = prediction_ENGCE106(float(request.POST.get('grade_ENGCE104')),float(request.POST.get('grade_ENGEL106')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
-#        elif subjectID == 'ENGCE107':
-#            Predict_result = prediction_ENGCE107(float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_ENGCE104')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_FUNSC101')))
-#        elif subjectID == 'ENGCE108':
-#            Predict_result = prediction_ENGCE108(float(request.POST.get('grade_ENGCE105')),float(request.POST.get('grade_ENGCE111')),float(request.POST.get('grade_ENGCE112')))
-#        elif subjectID == 'ENGCE109':
-#            Predict_result = prediction_ENGCE109(float(request.POST.get('grade_ENGCE104')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEL106')))
-#        elif subjectID == 'ENGCE110':
-#            Predict_result = prediction_ENGCE110(float(request.POST.get('grade_ENGCC304')),float(request.POST.get('grade_ENGEL105')),float(request.POST.get('grade_ENGEL106')))
-#        elif subjectID == 'ENGCE111':
-#            Predict_result = prediction_ENGCE111(float(request.POST.get('grade_ENGCE103')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEL106')),float(request.POST.get('grade_GEBLC103')))
-#        elif subjectID == 'ENGCE112':
-#            Predict_result = prediction_ENGCE112(float(request.POST.get('grade_ENGCC304')),float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_GEBLC103')))
-#        elif subjectID == 'ENGEL105':
-#            Predict_result = prediction_ENGEL105(float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEL106')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
-#        elif subjectID == 'ENGEL106':
-#            Predict_result = prediction_ENGEL106(float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEE106')),float(request.POST.get('grade_FUNMA105')),float(request.POST.get('grade_FUNSC101')))#
+        if subjectID == 'ENGCE101':
+            Predict_result = prediction_ENGCE101(float(request.POST.get('grade_ENGCC304')),float(request.POST.get('grade_FUNMA105')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
+        elif subjectID == 'ENGCE102':
+            Predict_result = prediction_ENGCE102(float(request.POST.get('grade_ENGCC304')),float(request.POST.get('grade_FUNMA105')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
+        elif subjectID == 'ENGCE103':
+            Predict_result = prediction_ENGCE103(float(request.POST.get('grade_ENGCC304')),float(request.POST.get('grade_ENGEE106')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
+        elif subjectID == 'ENGCE104':
+            Predict_result = prediction_ENGCE104(float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEE106')),float(request.POST.get('grade_FUNSC101')))
+        elif subjectID == 'ENGCE105':
+            Predict_result = prediction_ENGCE105(float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_ENGCE103')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEL106')),float(request.POST.get('grade_FUNMA105')),float(request.POST.get('grade_FUNSC101')))
+        elif subjectID == 'ENGCE106':
+            Predict_result = prediction_ENGCE106(float(request.POST.get('grade_ENGCE104')),float(request.POST.get('grade_ENGEL106')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
+        elif subjectID == 'ENGCE107':
+            Predict_result = prediction_ENGCE107(float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_ENGCE104')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_FUNSC101')))
+        elif subjectID == 'ENGCE108':
+            Predict_result = prediction_ENGCE108(float(request.POST.get('grade_ENGCE105')),float(request.POST.get('grade_ENGCE111')),float(request.POST.get('grade_ENGCE112')))
+        elif subjectID == 'ENGCE109':
+            Predict_result = prediction_ENGCE109(float(request.POST.get('grade_ENGCE104')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEL106')))
+        elif subjectID == 'ENGCE110':
+            Predict_result = prediction_ENGCE110(float(request.POST.get('grade_ENGCC304')),float(request.POST.get('grade_ENGEL105')),float(request.POST.get('grade_ENGEL106')))
+        elif subjectID == 'ENGCE111':
+            Predict_result = prediction_ENGCE111(float(request.POST.get('grade_ENGCE103')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEL106')),float(request.POST.get('grade_GEBLC103')))
+        elif subjectID == 'ENGCE112':
+            Predict_result = prediction_ENGCE112(float(request.POST.get('grade_ENGCC304')),float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_GEBLC103')))
+        elif subjectID == 'ENGEL105':
+            Predict_result = prediction_ENGEL105(float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEL106')),float(request.POST.get('grade_FUNSC101')),float(request.POST.get('grade_GEBLC103')))
+        elif subjectID == 'ENGEL106':
+            Predict_result = prediction_ENGEL106(float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEE106')),float(request.POST.get('grade_FUNMA105')),float(request.POST.get('grade_FUNSC101')))#
 
         
     return render(request, 'reports.html', {'subjectID':subjectID ,'subject_info':subject_info ,'subject_refer_index':subject_refer_index,'Predict_result':Predict_result,'GradeRoll':GradeRoll})
