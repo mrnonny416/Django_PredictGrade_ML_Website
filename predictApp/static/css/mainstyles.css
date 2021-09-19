@@ -48,12 +48,12 @@ body {
     height: 60%;
 }
 
-.in-img{
-  display: block;
-  padding-top: 4rem;
-  margin: auto;
-  width: 250px;
-  height: 100%;
+.in-img {
+    display: block;
+    padding-top: 4rem;
+    margin: auto;
+    width: 250px;
+    height: 100%;
 }
 
 .button {
@@ -77,13 +77,13 @@ body {
     height: 40%;
 }
 
-.in-form{
+.in-form {
     display: block;
     padding-top: 1rem;
     margin: auto;
     width: 320px;
     height: 100%;
-  }
+}
 
 .myfieldclass {
     height: 30px;
@@ -96,7 +96,6 @@ body {
     width: 150px;
 }
 
-
 .mainselect {
     height: 100%;
     width: 100%;
@@ -106,19 +105,18 @@ body {
     padding-top: 5rem;
 }
 
-
 .containerimg {
     position: relative;
     width: 100%;
-  }
-  
-  .imagehover {
+}
+
+.imagehover {
     display: block;
     width: 180;
     height: auto;
-  }
-  
-  .overlay {
+}
+
+.overlay {
     position: absolute;
     top: 9px;
     bottom: 0;
@@ -130,13 +128,13 @@ body {
     transition: .5s ease;
     background-color: #008CBA;
     border-radius: 1.2rem;
-  }
-  
-  .containerimg:hover .overlay {
+}
+
+.containerimg:hover .overlay {
     opacity: 0.5;
-  }
-  
-  .text {
+}
+
+.text {
     color: white;
     font-size: 20px;
     position: absolute;
@@ -146,68 +144,69 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-  }
+}
 
-  .mainform{
+.mainform {
     height: 70%;
     width: 100%;
     justify-self: center;
     align-self: center;
     margin: auto auto;
-  }
-  .inform{
+}
+
+.inform {
     height: 100%;
     width: 65%;
     justify-self: center;
     align-self: center;
     margin: auto auto;
-    
-  }
-  .formheadtext1{
+}
+
+.formheadtext1 {
     text-align: center;
     height: 13%;
     width: 80%;
     justify-self: center;
     align-self: center;
     margin: auto auto;
-    
+}
 
-  }
-  .formcontenttext1{
+.formcontenttext1 {
     text-align: center;
     height: 5%;
     width: 70%;
     justify-self: center;
     align-self: center;
     margin: auto auto;
-  }
-  .aboutsubject{
+}
+
+.aboutsubject {
     height: 80%;
     width: 80%;
     justify-self: center;
     align-self: center;
     margin: auto auto;
-    
+}
 
-  }
-  .formheadtext2{
+.formheadtext2 {
     text-align: center;
     height: 15%;
     width: 80%;
     justify-self: center;
     align-self: center;
     margin: auto auto;
-  }
-  .crop{
-    display: flex;
-  flex-direction: row;
-  text-align: center;
-  }
+}
 
-  .subjectcode{
+.crop {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.subjectcode {
     border-width: thin;
     border-style: solid;
-  border-color: black;
+    border-color: black;
     height: 50%;
     width: 50%;
     border-radius: 10px;
@@ -215,11 +214,12 @@ body {
     box-shadow: 0px 3px #8f8f8f;
     flex: 50%;
     margin: 5px;
-  }
-  .grade{
+}
+
+.grade {
     border-width: thin;
     border-style: solid;
-  border-color: black;
+    border-color: black;
     height: 50%;
     width: 50%;
     justify-self: center;
@@ -230,114 +230,128 @@ body {
     display: block;
     flex: 10%;
     margin: 5px;
-  }
-  
-.buttonalign{
-  padding-top: 10px;
+}
+
+.buttonalign {
+    padding-top: 10px;
     width: 15%;
     justify-self: center;
     align-self: center;
     margin: auto auto;
 }
-.reportheadtext1{
-  display: flex;
-  flex-direction: row;
-  height: 15%;
-  width: 50%;
-  margin: auto auto;
-}
-.result{
-  padding-left: 5px;
-  height: 100%;
-  width: 50%;
-  justify-self:flex-end;
-  align-self: flex-start;
-  margin: auto auto;
 
+.reportheadtext1 {
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+    width: 50%;
+    margin: auto auto;
 }
-.text1{
-  text-align:end;
-  height: 100%;
-  width: 50%;
-  justify-self:flex-end;
-  align-self: flex-start;
-  margin: auto auto;
 
+.result {
+    padding-left: 5px;
+    height: 100%;
+    width: 50%;
+    justify-self: flex-end;
+    align-self: flex-start;
+    margin: auto auto;
 }
-.reportcontenttext1{
-  text-align: center;
-  height: 8%;
-  width: 100%;
-  justify-self: center;
-  align-self: center;
-  margin: auto auto;
+
+.text1 {
+    text-align: end;
+    height: 100%;
+    width: 50%;
+    justify-self: flex-end;
+    align-self: flex-start;
+    margin: auto auto;
 }
-.reportheadtext2{
-  text-align: center;
-    height:12%;
+
+.reportcontenttext1 {
+    text-align: center;
+    height: 8%;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    margin: auto auto;
+}
+
+.reportheadtext2 {
+    text-align: center;
+    height: 12%;
     width: 70%;
     justify-self: center;
     align-self: center;
     margin: auto auto;
 }
-.reportsubject{
-  border-width: thin;
-  border-style: solid;
-  border-color: black;
-  height: 50%;
-  width: 50%;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0px 3px #8f8f8f;
-  flex: 70%;
-  margin: 5px;
+
+.reportsubject {
+    border-width: thin;
+    border-style: solid;
+    border-color: black;
+    height: 50%;
+    width: 50%;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 3px #8f8f8f;
+    flex: 70%;
+    margin: 5px;
 }
-.reportgrade{
-  border-width: thin;
-  border-style: solid;
-border-color: black;
-  height: 50%;
-  width: 50%;
-  justify-self: center;
-  align-self: center;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0px 3px #8f8f8f;
-  display: block;
-  flex: 2%;
-  margin: 5px;
+
+.reportgrade {
+    border-width: thin;
+    border-style: solid;
+    border-color: black;
+    height: 50%;
+    width: 50%;
+    justify-self: center;
+    align-self: center;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 3px #8f8f8f;
+    display: block;
+    flex: 2%;
+    margin: 5px;
 }
-.buttonrow{
-  padding-top: 10px;
+
+.buttonrow {
+    padding-top: 10px;
     width: 80%;
     justify-self: center;
     align-self: center;
     margin: auto auto;
 }
-.inbuttonrow{
-  text-align: center;
-  height: 10%;
-  width: 70%;
-  justify-self: center;
-  align-self: center;
-  margin: auto auto;
+
+.inbuttonrow {
+    text-align: center;
+    height: 10%;
+    width: 70%;
+    justify-self: center;
+    align-self: center;
+    margin: auto auto;
 }
+
 .buttonred {
-  border: none;
-  color: white;
-  padding: 10px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px 2px;
-  cursor: pointer;
-  background-color: #f5c837;
-  border-radius: 10px;
-  box-shadow: 2px 3px #D1D1D1;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #f5c837;
+    border-radius: 10px;
+    box-shadow: 2px 3px #D1D1D1;
 }
 
-
-
-
-
+.right {
+    position: absolute;
+    right: 0px;
+    color: #A70000;
+    font-family: sans-serif;
+    font-size: 20px;
+    padding: 20px 0px;
+    height: 2rem;
+    padding-right: 20px;
+}

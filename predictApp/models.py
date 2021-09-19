@@ -21,7 +21,7 @@ class Instructor(models.Model):
     order = models.AutoField(primary_key=True)
     Instructor_ID = models.CharField(max_length=20)
     Instructor_name = models.CharField(max_length=200)
-   
+
     def __str__(self):
         return self.Instructor_ID
 
@@ -43,3 +43,13 @@ class department(models.Model):
     
     def __str__(self):
         return self.department_name
+
+class criterion(models.Model):
+    order = models.AutoField(primary_key=True)
+    upper = models.IntegerField()
+    lower = models.IntegerField()
+    text = models.CharField(max_length=124)
+    text_color = models.CharField(max_length=24)
+    
+    def __str__(self):
+        return self.text

@@ -5,11 +5,17 @@
   </head>
   <body>
     <div class="container">
-    <div class="w3-container w3-blue">
-      <div class="header">
+      <div class="w3-container w3-blue">
+      <div class="crop">
+        <div class="header">
         ระบบทำนายผลความสามารถในการผ่านรายวิชาบังคับ
+        <a href="{% url 'select' %}">/หน้าเลือกรายวิชา</a>/{{subjectID}}
+         </div>
+          <div class="right">
+        <a href="{% url 'login' %}">logout</a>
+       </div>
+        </div>
       </div>
-    </div>
     <div class="mainform">
     <div class="inform"> 
     <div class="formheadtext1">
@@ -61,7 +67,7 @@
                 <option value="1.5">D+</option>
                 <option value="1">D</option>
                 <option value="0">F</option>
-                <option value="0">No Entry</option>
+                <option value="0.0">No Entry</option>
               </select>
               </div>
               <br>

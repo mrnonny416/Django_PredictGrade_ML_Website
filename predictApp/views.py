@@ -1,18 +1,22 @@
+from pickle import FALSE, TRUE
 from django.shortcuts import redirect, render
 from .loginforms import loginForm
-from .models import Subject ,Subject_refer ,Instructor,menu_subject,department
+from .models import Subject ,Subject_refer ,Instructor, criterion,menu_subject,department,criterion
 from .predictors import predict_ENGCE101,predict_ENGCE102,predict_ENGCE103,predict_ENGCE104,predict_ENGCE105,predict_ENGCE106,predict_ENGCE107,predict_ENGCE108,predict_ENGCE109,predict_ENGCE110,predict_ENGCE111,predict_ENGCE112,predict_ENGEL105,predict_ENGEL106
 
 # Create your views here.
 def login(request):
+    islogin = ''
     if request.method == 'POST':
         for department_check in department.objects.all():
             departmentID = (request.POST.get('studentID'))[department_check.start_CharField:department_check.end_CharField]
+            islogin = 'TRUE'
             if departmentID == department_check.department_id :
                 request.session['studentID'] = request.POST.get('studentID')
                 return redirect('select')
-    return render(request, 'login.html', {'form': loginForm})
+    return render(request, 'login.html', {'form': loginForm ,'islogin':islogin})
 
+    
 def select(request):
     studentID = request.session.get('studentID')
     if(studentID == None):
@@ -43,6 +47,7 @@ def reports(request):
         subject_refer_index = []
         subjectID = request.GET.get('subjectID')
         subject_info = Subject.objects.all()
+        criterions = criterion.objects.all()
         subject_refer_info = Subject_refer.objects.filter(subjectID=(subjectID))
         for subject_info_roll in subject_info:
             for subject_refer_info_roll in subject_refer_info:
@@ -59,6 +64,7 @@ def reports(request):
             elif grade_roll == '1.5':Grade = 'D+'
             elif grade_roll == '1':Grade = 'D'
             elif grade_roll == '0':Grade = 'F'
+            elif grade_roll == '0.0':Grade = 'no_entry'
             else:Grade = 'ยังไม่ได้ลงทะเบียนเรียนหรือถอนรายวิชา'
             GradeRoll.append([subject_refer_index_roll,Grade])
 
@@ -93,7 +99,7 @@ def reports(request):
             Predict_result = prediction_ENGEL106(float(request.POST.get('grade_ENGCE102')),float(request.POST.get('grade_ENGCE106')),float(request.POST.get('grade_ENGEE106')),float(request.POST.get('grade_FUNMA105')),float(request.POST.get('grade_FUNSC101')))#
 
         
-    return render(request, 'reports.html', {'subjectID':subjectID ,'subject_info':subject_info ,'subject_refer_index':subject_refer_index,'Predict_result':Predict_result,'GradeRoll':GradeRoll})
+    return render(request, 'reports.html', {'subjectID':subjectID ,'subject_info':subject_info ,'subject_refer_index':subject_refer_index,'Predict_result':Predict_result,'GradeRoll':GradeRoll, 'criterions':criterions})
 
 
 def prediction_ENGCE101(ENGCC304,FUNMA105,FUNSC101,GEBLC103):

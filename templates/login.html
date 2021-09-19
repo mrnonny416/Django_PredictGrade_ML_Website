@@ -20,6 +20,10 @@
       </div>
       <div class="form">
         <div class="in-form">
+            {% if islogin == 'TRUE' %}
+              <font color="red">รหัสนักศึกษาไม่ถูกต้อง กรุณากรอกให้</font>
+            <br>
+            {% endif %}
           <form method="post">
             {% csrf_token %}
             {{ form }}

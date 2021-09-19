@@ -4,31 +4,32 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   </head>
   <body>
-  <div class="container">
-   <div class="w3-container w3-blue">
-      <div class="header">
+   <div class="container">
+      <div class="w3-container w3-blue">
+      <div class="crop">
+        <div class="header">
         ระบบทำนายผลความสามารถในการผ่านรายวิชาบังคับ
+        <a href="{% url 'select' %}">/หน้าเลือกรายวิชา</a>
+        <a href="forms?subjectID={{subjectID}}">/{{subjectID}}</a>
+        </div>
+          <div class="right">
+        <a href="{% url 'login' %}">logout</a>
+   </div>
+        </div>
       </div>
-    </div>
     <div class="mainform">
     <div class="inform"> 
      <div class="reportheadtext1">
      <div class="text1">
    <h2>ผลการทำนาย : </h2>
    </div>
-    {% if Predict_result > 70 %}
-    <div class="result">
-      <h2>  <font color="Green">มีโอกาสผ่านมาก</font></h2>
-      </div>
-    {% elif Predict_result > 50 %}
-    <div class="result">
-      <h2>  <font color="orange">มีโอกาสผ่านน้อย</font></h2>
-      </div>
-    {% else %}
-    <div class="result">
-      <h2> <font color="red">มีโอกาศไม่ผ่าน</font></h2>
+  {% for criterion in criterions %}
+    {% if Predict_result <= criterion.upper and Predict_result >= criterion.lower %}
+      <div class="result">
+        <h2> <font color="{{criterion.text_color}}">{{criterion.text}}</font></h2>
       </div>
     {% endif %}
+  {% endfor %}
     </div>
     
     {% for subject_info in subject_info %}
@@ -59,7 +60,12 @@
           {% for GradeRoll_index in GradeRoll %}
             {% if GradeRoll_index.0 == subject_info_1.subjectID %}
             <div class="reportgrade">
-                  {{GradeRoll_index.1}}
+                  {% if GradeRoll_index.1 != 'no_entry' %}
+                    {{GradeRoll_index.1}}
+                  {% else %}
+                    ไม่ได้ลงทะเบียน
+                  {% endif %}
+                  
                   </div>
             {% endif %}
           {% endfor %}
