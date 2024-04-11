@@ -14,18 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.conf.urls import url
+from django.urls import path
 from predictApp.views import login, select, forms, reports
 
-
-
 urlpatterns = [
-    url('admin/', admin.site.urls),
-    url(r'^$', login, name='login'),
-    url(r'^forms$', forms, name='forms'),
-    url(r'^select$', select, name='select'),
-    url(r'^reports$', reports, name='reports'),
+    path('admin/', admin.site.urls),
+    path('', login, name='login'),
+    path('forms/', forms, name='forms'),
+    path('select/', select, name='select'),
+    path('reports/', reports, name='reports'),
+    path('forms/reports', reports, name='forms_reports'),  # เพิ่ม URL pattern สำหรับ forms/reports
 ]
-
-
-    

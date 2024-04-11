@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %} 
 <title>เข้าสู่ระบบ</title>
 </head>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -14,7 +15,7 @@
     <div class="main">
       <div class="img">
         <div class="in-img">
-          <img src="https://www.lopburicancer.in.th/img/user.png" style="width:100%;bottom: 0rem;">
+          <img src="{% static "" %}{{"images/Logo.png"}}" style="width:100%;bottom: 0rem;">
         </div>
 
       </div>
