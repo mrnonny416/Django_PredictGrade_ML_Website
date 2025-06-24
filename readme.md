@@ -2,6 +2,8 @@
 
 A web application for predicting the probability of passing core engineering courses, developed for the Computer Engineering Department, Faculty of Engineering, Rajamangala University of Technology Lanna. The system uses machine learning models to predict student performance based on their grades in prerequisite subjects.
 
+**GitHub Repository:** [mrnonny416/Django_PredictGrade_ML_Website](https://github.com/mrnonny416/Django_PredictGrade_ML_Website)
+
 ## Features
 
 -   **User Authentication:** Login with student ID (validated by department rules).
@@ -48,13 +50,15 @@ A web application for predicting the probability of passing core engineering cou
 -   Django 3.2+
 -   scikit-learn
 -   numpy
+-   pandas
+-   joblib
 
 ## Installation
 
 1. **Clone the repository:**
 
     ```sh
-    git clone <your-repo-url>
+    git clone https://github.com/mrnonny416/Django_PredictGrade_ML_Website.git
     cd Django_PredictGrade_ML_Website
     ```
 
@@ -62,7 +66,9 @@ A web application for predicting the probability of passing core engineering cou
 
     ```sh
     python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    venv\Scripts\activate  # On Windows
+    # or
+    source venv/bin/activate  # On macOS/Linux
     ```
 
 3. **Install dependencies:**
@@ -71,7 +77,7 @@ A web application for predicting the probability of passing core engineering cou
     pip install -r requirements.txt
     ```
 
-    _(If `requirements.txt` does not exist, install manually: `pip install django scikit-learn numpy`)_
+    _(If `requirements.txt` does not exist, install manually: `pip install django scikit-learn numpy pandas joblib`)_
 
 4. **Apply migrations:**
 
@@ -86,6 +92,7 @@ A web application for predicting the probability of passing core engineering cou
     ```
 
 6. **Collect static files (optional for production):**
+
     ```sh
     python manage.py collectstatic
     ```
@@ -131,4 +138,4 @@ This project is for educational purposes. Please contact the author for other us
 
 ---
 
-\*Developed as part of the Bachelor of Engineering curriculum, Computer Engineering,
+_Developed as part of the Bachelor of Engineering curriculum, Computer Engineering, RMUTL, Academic Year 2021._
